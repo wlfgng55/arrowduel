@@ -47,8 +47,8 @@ function stepArrows(r, dt) {
       if (v.hp > 0 && Math.hypot(a.x - v.x, a.z - v.z) < .38) {
         const H = v.c ? SH.CROUCH : SH.STAND;
         if (a.y > 0 && a.y < H) {
-          const head = a.y > H - .3;
-          const dmg = (head ? 100 : 34) * (.4 + .6 * a.pw);
+          const head = a.y > H - .2;
+          const dmg = (head ? 50 : 25) * (.4 + .6 * a.pw);
           v.hp = Math.max(0, v.hp - dmg);
           r.ev.push({ e: 'hit', i: v.i, head, x: f2(a.x), y: f2(a.y), z: f2(a.z) });
           return false;
